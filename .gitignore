@@ -1,0 +1,6 @@
+__pycache__
+*.bin
+*.log
+*.vscode
+*.cph
+*.env
