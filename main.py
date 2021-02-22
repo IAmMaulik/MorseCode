@@ -2,7 +2,10 @@ from data import alphabet_to_morse, morse_to_alphabet
 
 def convert_to_arr(input_string):
     # logic to convert the morse code string into a list 😶
-    pass    
+    if "  " not in input_string:
+        li = list(input_string.split(" "))
+    return li
+
 
 def encode(input_string):
     # funtion to convert the text into morse code COMPLETE 🔥🔥🔥
@@ -12,7 +15,7 @@ def encode(input_string):
         if (i+1) >= len(input_string):
             break
         elif input_string[i+1] == " ":
-            output_arr.append("  ")
+            output_arr.append("   ")
         else:
             output_arr.append(" ")
     return ''.join(output_arr)
@@ -26,8 +29,10 @@ def decode(input_string):
             output_arr.append(" ")
         else:
             output_arr.append(morse_to_alphabet[li[i]])
-    
-    return ''.join(li)
+    return ''.join(output_arr)
 
 
-print(encode(input("Enter the text you want to encode: ")))
+user_input = input("Enter the text: ")
+encoded_string = encode(user_input)
+print(encoded_string)
+print(decode(encoded_string))
